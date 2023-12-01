@@ -1,0 +1,63 @@
+body {
+    font-family: 'Quicksand', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('./bg.jpg') center/cover no-repeat fixed;
+    color: #fff;
+}
+
+nav {
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    position: relative;
+    height : 10vh;
+}
+
+nav a {
+    float: left;
+    display: block;
+    color: #fff;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.login-btn {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 12px 24px;
+    font-size: 18px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 16px;
+}
+
+.login-btn:hover {
+    background-color: #388e3c;
+}
+
+.welcome-container {
+    text-align: center;
+    padding: 50px;
+    color: #fff;
+}
+
+.welcome-container h1 {
+    color: #3f51b5;
+    margin-bottom: 20px;
+    font-size: 36px;
+}
+
+.welcome-container p {
+    font-size: 18px;
+}

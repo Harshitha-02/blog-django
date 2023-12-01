@@ -1,0 +1,27 @@
+
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'styleindex.css' %}">
+
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+    <nav>
+        <a href="/">Home</a>
+        <a href="{% url 'blog' %}">Blogs</a>
+        {% if user.is_authenticated %}
+        <a href="{% url 'logout' %}" class="login-btn">Logout</a>
+        {% else %}
+        <a href="{% url 'register'%}" class="login-btn">Login or Signup</a>
+        {% endif %}
+    </nav>
+
+    <div class="welcome-container">
+    {% if user.is_authenticated %}    
+    <h1>Hello, Welcome {{user.username}}!</h1>
+    {% else %}
+    <h1>Hello, Welcome to My Beautiful Website!</h1>
+    {% endif %}
+</div>
+
+
+
+    
