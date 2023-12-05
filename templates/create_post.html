@@ -62,23 +62,15 @@ body {
         {% endif %}
     </nav>
 
-<div class="header">
-    <h2 style="text-decoration: none; color: black;">Blogs!</h2>
-</div>
-<a href="{% url 'create_post' %}">Create Post</a>
-  <div class="row">
-    <div class="leftcolumn">
-      {% for post in posts reversed %}
-      <div class="card">
-        <a style="text-decoration: none; color: black;" href="/post/{{post.id}}">
-          <h2>{{post.title}}</h2>
-          <h5>{{post.created_at}}</h5>
-          <p>{{post.body|truncatewords:20}}
-          <a href="{% url 'post_detail' pk=post.id %}">Read more</a></p>
-        </a>
-      </div>
-      {% endfor %}
-    </div>
-  </div>
+
+{% block content %}
+  <h2>Create a New Post</h2>
+  <form method="post" action="{% url 'create_post' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Post</button>
+  </form>
+{% endblock %}
+
 </body>
 </html>
